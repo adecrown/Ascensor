@@ -1,0 +1,62 @@
+<template>
+  <button type="button" class="button" @click="$emit('click')" :id="id">
+    <span class="button__icon">
+      <ion-icon :name="iconName"></ion-icon>
+    </span>
+    <span class="button__text">{{ title }}</span>
+  </button>
+</template>
+<script setup>
+defineProps({
+  iconName: {
+    type: String,
+    required: true,
+  },
+  title: {
+    type: String,
+    required: true,
+  },
+  id: {
+    type: String,
+    required: true,
+  },
+});
+</script>
+<style>
+.button {
+  display: flex;
+  height: 50px;
+  padding: 0;
+  background: #036a81;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  overflow: hidden;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #036a81c9;
+}
+
+.button:active {
+  background: #006e58;
+}
+
+.button__text,
+.button__icon {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 24px;
+  color: white;
+  height: 100%;
+}
+
+.button__icon {
+  font-size: 1.5em;
+  background: rgba(0, 0, 0, 0.08);
+}
+</style>
